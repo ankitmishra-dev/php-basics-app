@@ -2,11 +2,12 @@
 
 /* 
 __DIR__ It gives current directory name
-It gives parent directory name of __DIR__(current directory name)
+It gives parent directory name of __DIR__(current directory name) eg. dir(__DIR__)
 */
-
-require dirname(__DIR__) .DIRECTORY_SEPARATOR. 'helpers/functions.php';
-require dirname(__DIR__) .DIRECTORY_SEPARATOR. 'router/routes.php';
+define('BASE_PATH', dirname(__DIR__, levels:$level=1));
+require BASE_PATH. '/helpers/functions.php';
+require base_path('helpers/Response.php');
+require base_path('router/router.php');
 
 
 
