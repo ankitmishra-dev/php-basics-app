@@ -25,9 +25,9 @@ class DatabaseConnection
         return $this->pdoInstance->fetchAll();
     }
 
-    public function find()
+    public function findOrFail()
     {
-        $result = $this->pdoInstance->fetchAll();
+        $result = $this->pdoInstance->fetch();
         if (!$result) {
             abort();
         }
