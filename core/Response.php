@@ -1,5 +1,7 @@
 <?php
 
+namespace core;
+
 final class Response
 {
     /* Client error responses */

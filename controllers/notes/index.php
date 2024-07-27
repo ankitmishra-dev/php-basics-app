@@ -1,6 +1,9 @@
 <?php
 
-require base_path('database/DatabaseConnection.php');
+namespace controllers\notes;
+
+use core\DatabaseConnection;
+
 $dbCreds  = require base_path('services/database.php');
 $header = 'Notes Page';
 
