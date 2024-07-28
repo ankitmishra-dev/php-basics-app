@@ -9,7 +9,7 @@ $header = 'Note ';
 
 $testconn = new DatabaseConnection($dbCreds['local']);
 
-if($_SERVER['REQUEST_METHOD']== 'POST'){
+if(isset($_REQUEST['_method']) && $_REQUEST['_method']== 'DELETE'){
     $id = $_POST['id'];
     $deleteRecord = $testconn->query('delete from notes where id = :id', [':id' => $_POST['id']]);
     if($deleteRecord){

@@ -26,6 +26,7 @@
 							<li style="display: flex; ">
 								<?= $contact['title'] ?> :  &nbsp;<a href="post?id=<?= $contact['id'] ?>" style="color:blue">view</a>
 								<form action="post" method="POST">
+									<input type="hidden" name="_method" value="DELETE">
 									<input type="hidden" name="id" value="<?= $contact['id'] ?>">
 									<button style="color:red" class="px-4">del</button>
 								</form>
