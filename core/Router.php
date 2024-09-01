@@ -6,7 +6,7 @@ class Router
 {   
     public $routesCollection = [];
 
-    public function routing($uri, $controller, $method){
+    public function routing($method, $uri, $controller){
 
         $this->routesCollection[] =  [
             'uri' => $uri,
@@ -16,33 +16,34 @@ class Router
 
     }
 
-    public function get($uri, $controller){
+    public function get(...$args){
 
-        $this->routing($uri, $controller, 'GET');
-
-    }
-
-    public function post($uri, $controller){
-
-        $this->routing($uri, $controller, 'POST');
+        $this->routing(strtoupper(__FUNCTION__), ...$args);
+        /* strtoupper(__FUNCTION__) this will return GET */
 
     }
 
-    public function put($uri, $controller){
+    public function post(...$args){
 
-        $this->routing($uri, $controller, 'PUT');
-
-    }
-
-    public function patch($uri, $controller){
-
-        $this->routing($uri, $controller, 'PATCH');
+        $this->routing('POST', ...$args);
 
     }
 
-    public function delete($uri, $controller){
+    public function put(...$args){
 
-        $this->routing($uri, $controller, 'DELETE');
+        $this->routing('PUT', ...$args);
+
+    }
+
+    public function patch(...$args){
+
+        $this->routing('PATCH', ...$args);
+
+    }
+
+    public function delete(...$args){
+
+        $this->routing('DELETE', ...$args);
 
     }
 

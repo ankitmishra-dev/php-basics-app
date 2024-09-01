@@ -1,8 +1,18 @@
 <?php
+
 function dd($variable){
     echo "<pre>";
         var_dump($variable);
     echo "</pre>";
+    die();
+}
+
+function dd_many(...$args){
+    foreach ($args as $var) {
+        echo "<pre>";
+        var_dump($var);
+        echo "</pre>";
+    }
     die();
 }
 

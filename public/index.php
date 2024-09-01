@@ -1,13 +1,13 @@
 <?php
 
 /* 
-__DIR__ It gives current directory name
-It gives parent directory name of __DIR__(current directory name) eg. dir(__DIR__)
+__DIR__ It gives current directory name here public
+It gives parent directory name here php-basics by doing eg. dirname(__DIR__)
 */
 
 use core\Router;
 
-define('BASE_PATH', dirname(__DIR__, levels:$level=1));
+define('BASE_PATH', dirname(__DIR__, levels:$level=1)); //php-basics
 require BASE_PATH. '/core/functions.php';
 
 
